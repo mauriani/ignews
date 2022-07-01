@@ -4,7 +4,8 @@ import { SubscribeButton } from "../components/SubscribeButton";
 
 import styles from "./home.module.scss";
 
-export default function Home() {
+export default function Home(props) {
+  console.log(props);
   return (
     <>
       <Head>
@@ -29,10 +30,13 @@ export default function Home() {
   );
 }
 
+// o nome da função tem que ser assim, de dentro do next conseguimos importar a typagem .
+// .. por isso escrevemos como const
 export const getServerSideProps: GetServerSideProps = async () => {
+ // const price = await stri
   return {
-    props : {
-      
-    }
+    props: {
+      nome: "Mauriani",
+    },
   };
 };
